@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import smellRouter from "./routes/smell";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./swagger";
 
 dotenv.config();
     
@@ -13,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/smells", smellRouter);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 mongoose.connect(process.env.MONGO_URI || "")
     .then(() => {
