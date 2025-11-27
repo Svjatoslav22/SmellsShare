@@ -14,7 +14,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/smells", smellRouter);
+app.use("/api/smells", smellRouter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
