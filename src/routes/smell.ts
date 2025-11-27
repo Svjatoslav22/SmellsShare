@@ -4,6 +4,7 @@ import {addSmell, getRandomSmell, reactSmell, getPopularSmells, getAllSmells, de
 const router = Router();
 
 router.post('/', addSmell);
+router.get('/', getAllSmells);
 router.delete("/:id", deleteSmell);
 router.get('/random', getRandomSmell);
 router.post('/react', reactSmell);

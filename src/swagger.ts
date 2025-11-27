@@ -16,7 +16,7 @@ export const swaggerSpec = {
     },
   ],
   paths: {
-    '/smells': {
+    '/api/smells': {
       post: {
         summary: 'Додати новий запах',
         tags: ['Smells'],
@@ -41,7 +41,7 @@ export const swaggerSpec = {
         responses: { '200': { description: 'Список запахів' } }
       }
       },
-      '/smells/{id}': {
+      '/api/smells/{id}': {
         get: {
           summary: 'Отримати запах по id',
           tags: ['Smells'],
@@ -61,14 +61,14 @@ export const swaggerSpec = {
           }
         }
     },
-    '/smells/random': {
+    '/api/smells/random': {
       get: {
         summary: 'Випадковий запах',
         tags: ['Smells'],
         responses: { '200': { description: 'Випадковий запах' } }
       }
     },
-    '/smells/react': {
+    '/api/smells/react': {
       post: {
         summary: 'Додати реакцію',
         tags: ['Smells'],
@@ -89,14 +89,14 @@ export const swaggerSpec = {
         responses: { '200': { description: 'Реакцію додано' } }
       }
     },
-    '/smells/popular': {
+    '/api/smells/popular': {
       get: {
         summary: 'Топ-10 популярних',
         tags: ['Smells'],
         responses: { '200': { description: 'Список популярних' } }
       }
     },
-    '/smells/stats': {
+    '/api/smells/stats': {
       get: {
         summary: 'Статистика API',
         tags: ['Smells'],

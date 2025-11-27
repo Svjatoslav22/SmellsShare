@@ -18,6 +18,8 @@ app.use("/api/smells", smellRouter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+
+
 mongoose.connect(process.env.MONGO_URI || "")
     .then(() => {
         console.log("Connected to MongoDB");
