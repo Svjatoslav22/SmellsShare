@@ -40,6 +40,26 @@ export const swaggerSpec = {
         tags: ['Smells'],
         responses: { '200': { description: 'Список запахів' } }
       }
+      },
+      '/smells/{id}': {
+        get: {
+          summary: 'Отримати запах по id',
+          tags: ['Smells'],
+          parameters: [
+            {
+              name: 'id',
+              in: 'path',
+              required: true,
+              schema: { type: 'string' },
+              description: 'ObjectId запаху'
+            }
+          ],
+          responses: {
+            '200': { description: 'Запах знайдено' },
+            '404': { description: 'Запах не знайдено' },
+            '400': { description: 'Некоректний id' }
+          }
+        }
     },
     '/smells/random': {
       get: {

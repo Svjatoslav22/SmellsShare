@@ -2,6 +2,19 @@ import { error } from "console";
 import Smell from "../models/Smell/Smell";
 import { Request, Response } from "express";
 
+export const getSmellById = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        const smell = await Smell.findById(id);
+        if (!smell) {
+            return res.status(404).json({ error: "Запах не знайдено" });
+        }
+        res.json(smell);
+    } catch (err) {
+        res.status(400).json({ error: "Некоректний id" });
+    }
+};
+
 
 export const addSmell = async (req: Request, res: Response) => {
     const { smellType } = req.body;

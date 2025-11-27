@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {addSmell, getRandomSmell, reactSmell, getPopularSmells, getAllSmells, deleteSmell, getStats} from "../controllers/smellsController";
+import {addSmell, getRandomSmell, reactSmell, getPopularSmells, getAllSmells, deleteSmell, getStats, getSmellById} from "../controllers/smellsController";
 
 const router = Router();
 
@@ -9,5 +9,7 @@ router.get('/random', getRandomSmell);
 router.post('/react', reactSmell);
 router.get('/popular', getPopularSmells);
 router.get('/stats', getStats);
+
+router.get('/:id', getSmellById);
 
 export default router;
